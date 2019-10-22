@@ -1,10 +1,21 @@
 var express = require ("express");
-var app = express()
+var app = express();
+var exphbs  = require('express-handlebars');
 var PORT = 3000;
 
-app.get("*", (req, res) =>{
-    res.send("hello world")
-})
+
+
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+ 
+
+
+
+
+
+app.get('/', function (req, res) {
+    res.render('home');
+});
 
 
 
