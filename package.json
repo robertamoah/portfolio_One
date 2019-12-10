@@ -3,22 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "license": "ISC",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install -prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robertamoah/portfolio_One.git"
   },
   "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/robertamoah/portfolio_One/issues"
   },
   "homepage": "https://github.com/robertamoah/portfolio_One#readme",
   "dependencies": {
+    "@types/concurrently": "^4.1.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/morgan": "^1.7.37",
+    "concurrently": "^5.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0"
+    "express-handlebars": "^3.1.0",
+    "morgan": "^1.9.1"
   }
 }

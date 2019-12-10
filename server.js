@@ -1,25 +1,44 @@
-var express = require ("express");
-var app = express();
-var exphbs  = require('express-handlebars');
-var PORT = 3000;
+const express = require("express");
+
+const app = express();
+
+const morgan = require("morgan");
+
+var bodyParser = require('body-parser');
+
+const mongoose = require("mongoose");
+
+const port = process.env.Port || 5000;
+
+const dotenv = require ("dotenv")
+
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+
+
+// Middlewares
+app.use(morgan("dev"));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
+
+
+// dotenv.config()
+//mongo Local connection
+// mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true, useUnifiedTopology: true}, () => console.log("connected to DB!")
+
+//   )
 
 
 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
- 
 
 
 
 
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
 
-
-
-
-app.listen(PORT, () =>{
-    console.log("hello you are on Port "+ PORT)
-}) 
+app.listen(port, () =>{
+    console.log(`Server Listening at Port ${port}`)
+})
