@@ -1,0 +1,11 @@
+p {
+  color: tomato;
+  font-size: large;
+}
+
+.picture {
+  border-radius: 50%;
+  background-color: violet;
+  width: 100px;
+  height: 200px;
+}
