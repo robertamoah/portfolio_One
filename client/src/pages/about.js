@@ -7,7 +7,7 @@ class About extends Component {
   }
   render() {
     return (
-      <h1>
+      <p>
         "At vero eos et accusamus et iusto odio dignissimos ducimus qui
         blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
         et quas molestias excepturi sint occaecati cupiditate non provident,
@@ -21,7 +21,7 @@ class About extends Component {
         earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
         voluptatibus maiores alias consequatur aut perferendis doloribus
         asperiores repellat."
-      </h1>
+      </p>
     );
   }
 }

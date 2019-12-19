@@ -5,11 +5,14 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import NoMatch from "./pages/nomatch";
 import Layout from "./components/layouts/layouts";
+import NavBarMain from "./components/navBar/index";
+import Jumbotron from "./components/jambotron/index";
 import "./App.css";
-
 function App() {
   return (
     <React.Fragment>
+      <NavBarMain />
+      <Jumbotron />
       <Layout>
         <Router>
           <Switch>
