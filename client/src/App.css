@@ -11,8 +11,8 @@
   animation: 500s para infinite linear;
 } */
 
-body {
-  /* background-image: url("https://images.unsplash.com/photo-1550645612-83f5d594b671?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80"); */
+/* body {
+  background-image: url("https://images.unsplash.com/photo-1550645612-83f5d594b671?ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80");
   background-repeat: repeat-x;
   background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
   background-size: 3500px, 800px, 500px 200px, 1000px, 400px 260px;
@@ -21,9 +21,19 @@ body {
   background-color: rgb(241, 241, 241);
 }
 
+
+
+
+
+
+
 @keyframes para {
   100% {
     background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%,
       400px 0;
   }
+} */
+
+body {
+  font-family: "Alice", Helvetica, sans-serif;
 }

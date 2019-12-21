@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Jumbotron as Jumbo, Container } from "react-bootstrap";
 import styled from "styled-components";
-import tron from "./images/tron.jpg";
+import tron from "./images/tron2.jpg";
 const Styles = styled.div`
   .jumbo {
     background: url(${tron}) no-repeat fixed bottom;
     background-size: cover;
     color: #efefef;
-    height: 200px;
+    height: 250px;
     position: relative;
     z-index: -2;
   }
@@ -27,16 +27,18 @@ const Styles = styled.div`
 class Jumbotron extends Component {
   render() {
     return (
-      <Styles>
-        <Jumbo fluid className="jumbo">
-          <div className="overlay">
-            <Container>
-              <h1>Welcome</h1>
-              <p>Learn To code</p>
-            </Container>
-          </div>
-        </Jumbo>
-      </Styles>
+      <React.Fragment>
+        <Styles>
+          <Jumbo fluid className="jumbo">
+            <div className="overlay">
+              <Container>
+                <h1>Full Stack Web Developer</h1>
+                <p>Responsiveness</p>
+              </Container>
+            </div>
+          </Jumbo>
+        </Styles>
+      </React.Fragment>
     );
   }
 }
