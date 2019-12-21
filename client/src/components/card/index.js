@@ -12,7 +12,9 @@ const Styles = styled.div`
     border-radius: 55px;
     margin-top: 20px !important;
   }
-
+  .one-1 {
+    margin-left: 50px;
+  }
   .card:hover {
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.353) !important;
   }
@@ -33,12 +35,18 @@ class CardMain extends Component {
                 <Card>
                   <Card.Img variant="top" src={tron10} />
                   <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title> Experinces</Card.Title>
                     <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                      My main focus is not to make all my works Functional but
+                      also Responsive
                     </Card.Text>
-                    <Button variant="dark">Go somewhere</Button>
+                    <Button
+                      href="/experinces"
+                      className="one-1"
+                      variant="outline-secondary"
+                    >
+                      Skills
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -46,12 +54,18 @@ class CardMain extends Component {
                 <Card>
                   <Card.Img variant="top" src={tron3} />
                   <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Projects</Card.Title>
                     <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                      Creating Application are not just a hobby but, wanting to
+                      make Life easier for everyone.
                     </Card.Text>
-                    <Button variant="dark"> See my Work</Button>
+                    <Button
+                      href="/projects"
+                      className="one-1"
+                      variant="primary"
+                    >
+                      See Projects
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>
@@ -59,12 +73,18 @@ class CardMain extends Component {
                 <Card>
                   <Card.Img variant="top" src={tron9} />
                   <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Summary</Card.Title>
                     <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                      Here is a Summary of My experinces and commitments, I
+                      believe a good employee sticks out like a sore thumb
                     </Card.Text>
-                    <Button variant="dark">Go somewhere</Button>
+                    <Button
+                      href="/resume"
+                      className="one-1"
+                      variant="outline-secondary"
+                    >
+                      Resume
+                    </Button>
                   </Card.Body>
                 </Card>
               </Col>

@@ -9,6 +9,9 @@ import Layout from "./components/layouts/layouts";
 import NavBarMain from "./components/navBar/index";
 import Jumbotron from "./components/jambotron/index";
 import FooterMain from "./components/footer/index";
+import Experinces from "./pages/experinces";
+import Resume from "./pages/resume";
+import Projects from "./pages/projects";
 import "./App.css";
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
               <Route exact path="/" component={Dashboard} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/experinces" component={Experinces} />
+              <Route exact path="/resume" component={Resume} />
+              <Route exact path="/projects" component={Projects} />
               <Route component={NoMatch} />
             </Switch>
           </Router>
