@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Nav, Navbar } from "react-bootstrap";
+import { Button, Icon } from "semantic-ui-react";
+
 import styled from "styled-components";
 
 const Styles = styled.div`
@@ -20,8 +22,13 @@ class NavBarMain extends Component {
     return (
       <React.Fragment>
         <Styles>
-          <Navbar expand="lg">
-            <Navbar.Brand href="/">Robert Pittman</Navbar.Brand>
+          <Navbar expand="sm">
+            <Button href="/" color="blue">
+              <Icon name="world" />
+              Home
+            </Button>
+
+            <Navbar.Brand>Robert Pittman</Navbar.Brand>
             <Navbar.Toggle arial-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
-import FaBeer from "react-icons/lib/fa/beer";
+import { Button, Icon } from "semantic-ui-react";
 
 const Styles = styled.div`
   #b-footer {
@@ -22,17 +22,33 @@ function FooterMain() {
           <Container>
             <Row>
               <Col>
-                Follow me on
-                <div>lorem{FaBeer}</div>
+                Social Media
+                <br />
+                <br />
+                <Button color="instagram">
+                  <Icon name="instagram" /> Instagram
+                </Button>
+                <br />
+                <br />
+                <Button color="white">
+                  <Icon name="git" /> GitHub
+                </Button>
               </Col>
               <Col>
                 Contact
                 <br />
-                <a href="/contact">Link</a>
+                <br />
+                <br />
+                <Button href="/contact" color="green">
+                  <Icon name="info" /> Contact Info
+                </Button>
               </Col>
               <Col>
                 Privacy
-                <div>lorem</div>
+                <br />
+                <Button href="/projects" color="blue">
+                  <Icon name="book" /> Projects
+                </Button>
               </Col>
             </Row>
             <br />

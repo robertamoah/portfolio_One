@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron as Jumbo, Container } from "react-bootstrap";
 import styled from "styled-components";
 import tron from "./images/tron2.jpg";
+
 const Styles = styled.div`
   .jumbo {
     background: url(${tron}) no-repeat fixed bottom;
