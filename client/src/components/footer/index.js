@@ -6,7 +6,7 @@ import { Button, Icon } from "semantic-ui-react";
 const Styles = styled.div`
   #b-footer {
     width: 100%;
-    height: 290px;
+    height: 350px;
     background-color: #2d3748;
     color: white;
     opacity: 0.9;
@@ -25,18 +25,25 @@ function FooterMain() {
                 Social Media
                 <br />
                 <br />
-                <Button color="instagram">
-                  <Icon name="instagram" /> Instagram
+                <Button
+                  href="https://www.linkedin.com/in/robert-pittman-380854164/"
+                  color="linkedin"
+                >
+                  <Icon name="linkedin" /> Instagram
                 </Button>
                 <br />
                 <br />
-                <Button color="white">
+                <Button href="https://twitter.com/warestern" color="twitter">
+                  <Icon name="twitter" /> Instagram
+                </Button>
+                <br />
+                <br />
+                <Button href="https://github.com/robertamoah" color="white">
                   <Icon name="git" /> GitHub
                 </Button>
               </Col>
               <Col>
                 Contact
-                <br />
                 <br />
                 <br />
                 <Button href="/contact" color="green">
@@ -45,6 +52,7 @@ function FooterMain() {
               </Col>
               <Col>
                 Privacy
+                <br />
                 <br />
                 <Button href="/projects" color="blue">
                   <Icon name="book" /> Projects

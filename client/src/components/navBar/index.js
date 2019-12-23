@@ -24,7 +24,7 @@ class NavBarMain extends Component {
         <Styles>
           <Navbar expand="sm">
             <Button href="/" color="blue">
-              <Icon name="world" />
+              <Icon name="home" />
               Home
             </Button>
 

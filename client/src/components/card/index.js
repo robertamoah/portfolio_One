@@ -11,10 +11,12 @@ const Styles = styled.div`
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.153) !important;
     border-radius: 55px;
     margin-top: 20px !important;
+    magin: 0 auto !important;
   }
-  .one-1 {
-    margin-left: 50px;
+  .button-one {
+    magin-left: 500px !important;
   }
+
   .card:hover {
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.353) !important;
   }
@@ -31,7 +33,7 @@ class CardMain extends Component {
         <Styles>
           <Container>
             <Row>
-              <Col sm>
+              <Col lg>
                 <Card>
                   <Card.Img variant="top" src={tron10} />
                   <Card.Body>
@@ -42,7 +44,7 @@ class CardMain extends Component {
                     </Card.Text>
                     <Button
                       href="/experinces"
-                      className="one-1"
+                      className="button-one"
                       variant="outline-secondary"
                     >
                       Skills
@@ -61,7 +63,7 @@ class CardMain extends Component {
                     </Card.Text>
                     <Button
                       href="/projects"
-                      className="one-1"
+                      className="button-one"
                       variant="primary"
                     >
                       See Projects
@@ -80,7 +82,7 @@ class CardMain extends Component {
                     </Card.Text>
                     <Button
                       href="/resume"
-                      className="one-1"
+                      className="button-one"
                       variant="outline-secondary"
                     >
                       Resume
