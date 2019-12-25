@@ -34,11 +34,11 @@ function FooterMain() {
                 <br />
                 <br />
                 <Button href="https://twitter.com/warestern" color="twitter">
-                  <Icon name="twitter" /> Instagram
+                  <Icon name="twitter" /> Twitter
                 </Button>
                 <br />
                 <br />
-                <Button href="https://github.com/robertamoah" color="white">
+                <Button href="https://github.com/robertamoah">
                   <Icon name="git" /> GitHub
                 </Button>
               </Col>
@@ -62,7 +62,6 @@ function FooterMain() {
             <br />
             <p className="footer-text">
               &copy; {new Date().getFullYear()} City App - All Rights Reserved
-              <hr />
               Questions? Call
               <a href="tel:973-441-0071"> 973-441-0071 </a>
               <br />

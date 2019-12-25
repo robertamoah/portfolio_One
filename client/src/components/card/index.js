@@ -13,10 +13,12 @@ const Styles = styled.div`
     margin-top: 20px !important;
     magin: 0 auto !important;
   }
-  .button-one {
-    magin-left: 500px !important;
+  .move {
+    margin-left: 55px;
   }
-
+  .two1 {
+    margin-left: 30px;
+  }
   .card:hover {
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.353) !important;
   }
@@ -31,7 +33,7 @@ class CardMain extends Component {
     return (
       <React.Fragment>
         <Styles>
-          <Container>
+          <Container className="d-flex two1 justify-content-around">
             <Row>
               <Col lg>
                 <Card>
@@ -44,7 +46,7 @@ class CardMain extends Component {
                     </Card.Text>
                     <Button
                       href="/experinces"
-                      className="button-one"
+                      className="move"
                       variant="outline-secondary"
                     >
                       Skills
@@ -61,11 +63,7 @@ class CardMain extends Component {
                       Creating Application are not just a hobby but, wanting to
                       make Life easier for everyone.
                     </Card.Text>
-                    <Button
-                      href="/projects"
-                      className="button-one"
-                      variant="primary"
-                    >
+                    <Button href="/projects" className="move" variant="primary">
                       See Projects
                     </Button>
                   </Card.Body>
@@ -82,7 +80,7 @@ class CardMain extends Component {
                     </Card.Text>
                     <Button
                       href="/resume"
-                      className="button-one"
+                      className="move"
                       variant="outline-secondary"
                     >
                       Resume

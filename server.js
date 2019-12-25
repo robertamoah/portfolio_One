@@ -1,30 +1,24 @@
 const express = require("express");
-
+const path = require("path");
 const app = express();
-
 const morgan = require("morgan");
-
-// var bodyParser = require("body-parser");
-
 const mongoose = require("mongoose");
-
 const port = process.env.Port || 8080;
-
 const dotenv = require("dotenv");
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+dotenv.config();
 // Middlewares
 app.use(morgan("dev"));
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+const routes = require("./routes/api_routes")(app);
 
-// require("./routes/api_routes")(app);
-
-dotenv.config();
 //mongo Local connection
 mongoose.connect(
   process.env.DB_CONNECT,
@@ -33,5 +27,5 @@ mongoose.connect(
 );
 
 app.listen(port, () => {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  console.log(`🌎  ==> API Server now listening on PORT ${port}!`);
 });
