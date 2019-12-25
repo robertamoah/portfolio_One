@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const morgan = require("morgan");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const port = process.env.Port || 8080;
 const dotenv = require("dotenv");
 
@@ -23,11 +23,11 @@ app.use(morgan("dev"));
 const routes = require("./routes/api_routes")(app);
 
 //mongo Local connection
-mongoose.connect(
-  process.env.DB_CONNECT,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => console.log("connected to DB!")
-);
+// mongoose.connect(
+//   process.env.DB_CONNECT,
+//   { useNewUrlParser: true, useUnifiedTopology: true },
+//   () => console.log("connected to DB!")
+// );
 
 app.listen(port, () => {
   console.log(`🌎  ==> API Server now listening on PORT ${port}!`);
