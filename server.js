@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const port = process.env.Port || 8080;
 const dotenv = require("dotenv");
 
+dotenv.config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -14,7 +15,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-dotenv.config();
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 // Middlewares
 app.use(morgan("dev"));
 const routes = require("./routes/api_routes")(app);
