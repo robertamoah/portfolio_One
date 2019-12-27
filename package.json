@@ -1,21 +1,21 @@
 {
   "name": "portfolio_one",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Portfolio",
   "main": "server.js",
   "license": "ISC",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "cd client && npm start",
+    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm install -prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install -prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robertamoah/portfolio_One.git"
   },
-  "author": "",
+  "author": "Robert Pittman",
   "bugs": {
     "url": "https://github.com/robertamoah/portfolio_One/issues"
   },
