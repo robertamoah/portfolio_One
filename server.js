@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const morgan = require("morgan");
 // const mongoose = require("mongoose");
-const port = process.env.Port || 8080;
+const port = process.env.PORT || 8080;
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -31,6 +31,6 @@ if (process.env.NODE_ENV === "production") {
 //   () => console.log("connected to DB!")
 // );
 
-app.listen(port, () => {
-  console.log(`🌎  ==> API Server now listening on PORT ${port}!`);
+app.listen(PORT, () => {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
