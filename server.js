@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const morgan = require("morgan");
 // const mongoose = require("mongoose");
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 const dotenv = require("dotenv");
 
 dotenv.config();
