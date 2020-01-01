@@ -43,5 +43,9 @@
   "engines": {
     "node": "5.0.0",
     "npm": "4.6.1"
+  },
+  "devDependencies": {
+    "@types/nodemon": "^1.19.0",
+    "nodemon": "^2.0.2"
   }
 }
