@@ -10,7 +10,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm installclient && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "@types/nodemailer": "^6.4.0",
     "@types/npm": "^2.0.31",
     "@types/react": "^16.9.16",
-    "concurrently": "^5.0.1",
+    "concurrently": "^5.0.2",
     "create-react-app": "^3.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
