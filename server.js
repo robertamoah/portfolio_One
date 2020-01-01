@@ -10,6 +10,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(morgan("dev"));
+if (app.get("env") == "production") {
+  app.use(
+    morgan("common", {
+      skip: function(req, res) {
+        return res.statusCode < 400;
+      },
+      stream: __dirname + "/../morgan.log"
+    })
+  );
+} else {
+  app.use(morgan("dev"));
+}
+
 const routes = require("./routes/api_routes")(app);
 
 // Serve up static assets (usually on heroku)
