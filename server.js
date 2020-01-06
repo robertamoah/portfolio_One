@@ -9,11 +9,7 @@ dotenv.config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const routes = require("./routes/api_routes")(app);
 app.use(morgan("dev"));
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -24,6 +20,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and vie
+const routes = require("./routes/api_routes")(app);
 
 // Middlewares
 

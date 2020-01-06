@@ -29,7 +29,6 @@
     "@types/morgan": "^1.7.37",
     "@types/node": "^13.1.1",
     "@types/nodemailer": "^6.4.0",
-    "@types/npm": "^2.0.31",
     "@types/react": "^16.9.16",
     "concurrently": "^5.0.1",
     "create-react-app": "^3.3.0",
@@ -42,8 +41,7 @@
     "react": "^16.12.0"
   },
   "engines": {
-    "node": "13.5.0",
-    "npm": "6.13.4"
+    "node": ">=6"
   },
   "devDependencies": {}
 }
