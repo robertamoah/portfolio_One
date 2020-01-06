@@ -1,30 +1,20 @@
 const express = require("express");
-const app = express();
-const morgan = require("morgan");
-// const mongoose = require("mongoose");
-const PORT = process.env.PORT || 8080;
-const dotenv = require("dotenv");
 const path = require("path");
+const app = express();
+const dotenv = require("dotenv");
+const morgan = require("morgan");
+const PORT = process.env.PORT || 8080;
+
 dotenv.config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-if (app.get("env") == "production") {
-  app.use(
-    morgan("common", {
-      skip: function(req, res) {
-        return res.statusCode < 400;
-      },
-      stream: __dirname + "/../morgan.log"
-    })
-  );
-} else {
-  app.use(morgan("dev"));
+const routes = require("./routes/api_routes")(app);
+app.use(morgan("dev"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
 }
 
-const routes = require("./routes/api_routes")(app);
-
-// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
@@ -32,6 +22,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+// Add routes, both API and vie
 
 // Middlewares
 
