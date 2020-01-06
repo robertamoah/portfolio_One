@@ -23,7 +23,7 @@ class NavBarMain extends Component {
       <React.Fragment>
         <Styles>
           <Navbar expand="sm">
-            <Button href="/home" color="blue">
+            <Button href="/" color="blue">
               <Icon name="home" />
               Home
             </Button>
@@ -33,7 +33,7 @@ class NavBarMain extends Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
                 <Nav.Item>
-                  <Nav.Link href="/home">Home</Nav.Link>
+                  <Nav.Link href="/">Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link href="/about">About</Nav.Link>
