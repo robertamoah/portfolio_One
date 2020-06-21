@@ -6,45 +6,25 @@ class Form1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      first: "",
-      last: "",
+      firstName: "",
+      lastName: "",
       email: "",
       opinion: "",
       message: {},
-      isclick: false
+      isclick: false,
     };
-    this.handleFirst = this.handleFirst.bind(this);
-    this.handleLast = this.handleLast.bind(this);
-    this.handleOpinion = this.handleOpinion.bind(this);
-    this.handleEmail = this.handleEmail.bind(this);
-    this.submitForm = this.submitForm.bind(this);
-  }
-
-  handleFirst(e) {
-    this.setState({ first: e.target.value });
-  }
-
-  handleLast(e) {
-    this.setState({ last: e.target.value });
-  }
-
-  handleEmail(e) {
-    this.setState({ email: e.target.value });
-  }
-
-  handleOpinion(e) {
-    this.setState({ opinion: e.target.value });
   }
 
   submitForm(e) {
     e.preventDefault();
-    API.info(this.state, callback => {
+
+    API.info(this.state, (callback) => {
       this.setState({ message: callback.data });
       console.log(this.state.message);
     });
     if (this.state.isclick === false) {
       this.setState({
-        isclick: true
+        isclick: true,
       });
     }
   }
@@ -52,32 +32,25 @@ class Form1 extends Component {
   render() {
     return (
       <React.Fragment>
-        <Form success onSubmit={this.submitForm}>
-          {this.state.isclick ? (
-            <Message
-              success
-              header="Form Completed"
-              content={this.state.message}
-            />
-          ) : null}
+        <Form success>
           <Form.Group widths="equal">
             <Form.Field
               id="form-input-control-first-name"
               control={Input}
-              value={this.state.first}
-              onChange={this.handleFirst}
+              value={this.state.firstName}
+              onChange={(e) => this.setState({ firstName: e.target.value })}
               label="First name"
               placeholder="First name"
-              required
+              // required
             />
             <Form.Field
               id="form-input-control-last-name"
               control={Input}
-              value={this.state.last}
-              onChange={this.handleLast}
+              value={this.state.lastName}
+              onChange={(e) => this.setState({ lastName: e.target.value })}
               label="Last name"
               placeholder="Last name"
-              required
+              // required
             />
           </Form.Group>
           <Form.Field
@@ -85,9 +58,9 @@ class Form1 extends Component {
             control={TextArea}
             label="Opinion"
             value={this.state.opinion}
-            onChange={this.handleOpinion}
+            onChange={(e) => this.setState({ opinion: e.target.value })}
             placeholder="Opinion"
-            required
+            // required
           />
           <Form.Field
             id="form-input-control-error-email"
@@ -95,8 +68,8 @@ class Form1 extends Component {
             label="Email"
             placeholder="joe@schmoe.com"
             value={this.state.email}
-            onChange={this.handleEmail}
-            required
+            onChange={(e) => this.setState({ email: e.target.value })}
+            // required
           />
           <Form.Field
             id="form-button-control-public"
@@ -105,6 +78,7 @@ class Form1 extends Component {
             content="Confirm"
             label=""
             color="blue"
+            onClick={this.submitForm.bind(this)}
           />
         </Form>
       </React.Fragment>

@@ -24,7 +24,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Middlewares
-
 //mongo Local connection
 // mongoose.connect(
 //   process.env.DB_CONNECT,
