@@ -7,19 +7,31 @@ module.exports = {
     if (req.body.email == "") {
       return res.send(
         JSON.stringify({
-          message: "email empty",
+          message: "Email Must Be Fill",
           status: 400,
         })
       );
-    } else if (req.body.email) {
+    } else if (
+      req.body.firstName == "" ||
+      req.body.lastName == "" ||
+      req.body.opinion == ""
+    ) {
+      return res.send(
+        JSON.stringify({
+          message: "Fill in all Fields",
+          status: 400,
+        })
+      );
+    } else if (req.body.email || req.body.email == "") {
       // check to see if email is right
       if (checkEmailReal() === false)
         return res.send(
           JSON.stringify({
-            message: "check email",
+            message: "Email Must Be Valid",
             status: 400,
           })
         );
+
       function checkEmailReal() {
         const email = [...req.body.email];
         let result = false;
@@ -44,7 +56,7 @@ module.exports = {
     // basaic HTML content with Tmeplate String
     const output = `<p> You have a new contact request </p>
        <P> Thank you for taking your time in reaching out, you can also click the link below to set an appointment with me.</p>
-       <p>From: Robert Pittman</p>
+       <p>From: ${name}</p>
        <p>Your opinion: ${opinion}</p>
        `;
 

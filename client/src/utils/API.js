@@ -6,8 +6,8 @@ export default {
 
     axios
       .post(URL, {
-        first: type.first,
-        last: type.last,
+        firstName: type.firstName,
+        lastName: type.lastName,
         email: type.email,
         opinion: type.opinion,
       })
