@@ -5,7 +5,7 @@ import { Form, Input, TextArea, Button } from "semantic-ui-react";
 import { Alert, Container } from "reactstrap";
 
 const MainMessage = (props) => {
-  console.log(props);
+  // console.log(props);
 
   if (props.message) {
     return (
@@ -38,27 +38,23 @@ class Form1 extends Component {
     API.info(this.state, (callback) => {
       this.setState({ message: callback.data }, () => {
         if (this.state.message.status === 200) {
-          this.setState({
-            firstName: "",
-            lastName: "",
-            email: "",
-            opinion: "",
-          });
+          this.setState(
+            {
+              firstName: "",
+              lastName: "",
+              email: "",
+              opinion: "",
+            },
+            () => setTimeout(() => this.setState({ isclick: false }), 3500)
+          );
         }
       });
     });
 
     if (this.state.isclick === false || true) {
-      this.setState(
-        {
-          isclick: true,
-        },
-
-        () =>
-          setTimeout(() => {
-            this.setState({ isclick: false });
-          }, 30000)
-      );
+      this.setState({
+        isclick: true,
+      });
     }
   }
 
