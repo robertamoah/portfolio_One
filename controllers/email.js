@@ -54,8 +54,10 @@ module.exports = {
     });
 
     // basaic HTML content with Tmeplate String
-    const output = `<p> You have a new contact request </p>
-       <P> Thank you for taking your time in reaching out, you can also click the link below to set an appointment with me.</p>
+    const output = `<p> 
+    You have a new contact request 
+    </p>
+       <P> Thank you for taking your time in reaching out, you can also call me at #973-441-0071</p>
        <p>From: ${name}</p>
        <p>Your opinion: ${opinion}</p>
        `;
@@ -63,22 +65,22 @@ module.exports = {
     let transporter = nodemailer.createTransport({
       service: "gmail",
       port: 465,
-      secure: true,
+      // secure: true,
       auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
       },
     });
 
-    const myEmail = "robertamoah271@gmail.com";
-
     let mailoptions = {
       // sender address
       from: process.env.EMAIL,
       // list of receivers
-      to: [email, myEmail],
+      to: email,
+
+      cc: "robertamoah271@gmail.com",
       // Subject line
-      subject: "Website Response",
+      subject: "Robert Pittman Website Response",
       // plain text body
       text: `Hey ${name}`,
       html: output,
