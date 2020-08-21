@@ -5,10 +5,12 @@ class Contact extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <React.Fragment>
         <h1 className="center1">Contact</h1>
+
         <Form1 />
         <br />
         <br />

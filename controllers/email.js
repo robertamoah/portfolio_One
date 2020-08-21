@@ -2,14 +2,13 @@ const nodemailer = require("nodemailer");
 
 module.exports = {
   sendEmail: function (req, res) {
-    console.log(req.body);
     // checks to see if email is empty
     if (req.body.email == "") {
       return res.send(
         JSON.stringify({
           message: "Email Must Be Fill",
           status: 400,
-        })
+        }),
       );
     } else if (
       req.body.firstName == "" ||
@@ -20,7 +19,7 @@ module.exports = {
         JSON.stringify({
           message: "Fill in all Fields",
           status: 400,
-        })
+        }),
       );
     } else if (req.body.email || req.body.email == "") {
       // check to see if email is right
@@ -29,7 +28,7 @@ module.exports = {
           JSON.stringify({
             message: "Email Must Be Valid",
             status: 400,
-          })
+          }),
         );
 
       function checkEmailReal() {
@@ -63,9 +62,10 @@ module.exports = {
        `;
 
     let transporter = nodemailer.createTransport({
-      service: "gmail",
+      service: "Gmail",
+      host: "smtp.gmail.com",
       port: 465,
-      // secure: true,
+      secure: true,
       auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
@@ -76,7 +76,7 @@ module.exports = {
       // sender address
       from: process.env.EMAIL,
       // list of receivers
-      to: email,
+      to: [email, process.env.EMAIL],
 
       cc: "robertamoah271@gmail.com",
       // Subject line

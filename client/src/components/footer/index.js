@@ -6,10 +6,11 @@ import { Button, Icon } from "semantic-ui-react";
 const Styles = styled.div`
   #b-footer {
     width: 100%;
-    height: 350px;
-    background-color: #2d3748;
+    height: 90;
+    background-color: #001f3f;
     color: white;
     opacity: 0.9;
+    margin-bottom: 0;
     // background-color: transparent;
   }
 `;
@@ -27,6 +28,7 @@ function FooterMain() {
                 <br />
                 <Button
                   href="https://www.linkedin.com/in/robert-pittman-380854164/"
+                  target="_blank"
                   color="linkedin"
                 >
                   <Icon name="linkedin" /> Instagram

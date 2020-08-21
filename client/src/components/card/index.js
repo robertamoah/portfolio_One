@@ -8,6 +8,7 @@ import tron3 from "../card/images/tron3.jpg";
 const Styles = styled.div`
   .card {
     width: 18rem;
+
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.153) !important;
     border-radius: 55px;
     margin-top: 20px !important;

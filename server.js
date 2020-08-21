@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+// const mongoose = require("mongoose");
 const PORT = process.env.PORT || 8080;
 
 dotenv.config();
@@ -12,7 +13,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Add routes, both API and vie
-const routes = require("./routes/api_routes")(app);
+require("./routes/api_routes")(app);
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
@@ -23,8 +24,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// Middlewares
-//mongo Local connection
+// mongo Local connection
 // mongoose.connect(
 //   process.env.DB_CONNECT,
 //   { useNewUrlParser: true, useUnifiedTopology: true },

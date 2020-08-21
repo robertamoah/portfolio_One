@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { Button, Icon } from "semantic-ui-react";
-
 import styled from "styled-components";
-
 const Styles = styled.div`
   .navbar {
-    background-color: #1a202c;
+    background-color: #001f3f;
   }
   .navbar-brand,
   .navbar-nav .nav-link {
@@ -23,11 +21,6 @@ class NavBarMain extends Component {
       <React.Fragment>
         <Styles>
           <Navbar expand="sm">
-            <Button href="/" color="blue">
-              <Icon name="home" />
-              Home
-            </Button>
-
             <Navbar.Brand>Robert Pittman</Navbar.Brand>
             <Navbar.Toggle arial-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -40,6 +33,9 @@ class NavBarMain extends Component {
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link href="/contact">Contact</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/#"></Nav.Link>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>
